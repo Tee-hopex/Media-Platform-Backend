@@ -5,8 +5,8 @@
     "title": "API Documentation",
     "description": "API documentation for your project"
   },
-  "host": "localhost:4000/auth",
-  "basePath": "/",
+  "host": "localhost:4000",
+  "basePath": "/auth",
   "tags": [
     {
       "name": "Auth",
@@ -194,14 +194,23 @@
                 },
                 "description": {
                   "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
                 }
               }
             }
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -244,6 +253,9 @@
           "401": {
             "description": "Unauthorized"
           },
+          "404": {
+            "description": "Not Found"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -271,6 +283,9 @@
                 "description": {
                   "example": "any"
                 },
+                "genre": {
+                  "example": "any"
+                },
                 "fileId": {
                   "example": "any"
                 }
@@ -281,6 +296,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -355,7 +373,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fileId": {
+                "_id": {
                   "example": "any"
                 }
               }
@@ -366,34 +384,14 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/media/latest": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -416,7 +414,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fileId": {
+                "_id": {
                   "example": "any"
                 }
               }
@@ -426,6 +424,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
