@@ -308,20 +308,6 @@ route.post('/media/download', authenticateToken, async (req, res) => {
     }
 });
 
-// Endpoint to fetch the latest videos/audios
-// route.get('/media/latest', authenticateToken, async (req, res) => {
-//     try {
-//         const latestMedia = await Media.find()
-//             .sort({ createdAt: -1 }) 
-//             .limit(10); // Fetch the latest 10 media items (adjust as needed)
-
-//         res.status(200).json({ status: 'ok', latestMedia });
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ status: 'error', msg: 'Failed to retrieve latest media', error: error.message });
-//     }
-// });
-
 // Endpoint to retrieve detailed info about a specific media item
 route.post('/media/details', authenticateToken, async (req, res) => {
     const { _id } = req.body;
